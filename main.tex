@@ -1,0 +1,558 @@
+% using this template: https://www.overleaf.com/latex/templates/beautiful-cv-with-fontawesome-integration/pswqpmnzbshp
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+\newfontfamily{\basictitle}{basictitlefont}[
+Path = Fonts/,
+Extension = .ttf,
+UprightFont = basictitlefont
+]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\iffalse
+% \iftrue
+\addtolength{\oddsidemargin}{0.3in}
+\addtolength{\marginparsep}{0.3in}
+\addtolength{\evensidemargin}{0.3in}
+\addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{0.3in}
+\addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\normalfont\large
+}{}{0pt}{}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-35pt}
+\includegraphics[scale=0.20]{dp_cropped}
+\end{wrapfigure}
+\fi
+
+%----------HEADING----------
+
+{\basictitle \Huge Diana Solano-Oropeza}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+% \vspace{10pt}
+
+% 1804 Hasbrouck Apartments, Ithaca, NY 14850
+Ithaca, NY 14853
+
+\href{mailto:solaorop@gmail.com}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{solaorop@gmail.com \textit{(preferred)}}} $|$
+\href{mailto:ds4053@columbia.edu}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{ds2396@cornell.edu}} $|$
+\href{www.linkedin.com/in/xicanxphys}{
+    \faLinkedin
+    \thinspace \thinspace        
+    \myuline{xicanxphys}} $|$
+\href{https://github.com/nanoza}{
+    \faGithub
+    \thinspace \thinspace
+    \myuline{nanoza}}
+
+
+\href{https://twitter.com/DSolanoOropeza}{
+    \faTwitter
+    \thinspace \thinspace
+    \myuline{DSolanoOropeza}} $|$
+\href{https://dianasolano-oropeza.com} {
+    \faGlobe
+    \thinspace \thinspace
+    \myuline{dianasolano-oropeza.com}} $|$
+% \faPhone
+% \thinspace \thinspace
+% +1 347 316 8440
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+        {Cornell University}{Ithaca, NY}
+        {Ph.D in Astronomy}
+        {Aug 2023 - Present}
+        \resumeItemListStart
+
+            \resumeItem{Concentrations: Astrostatistics, Astrobiology, Exoplanets}
+            \resumeItem{Coursework: Exoplanet Characterization, Physics of the Planets, Planetary Atmospheres, Galactic Structure and Stellar Dynamics}
+            
+        \resumeItemListEnd
+  
+    \resumeSubheading
+        {Columbia University}{New York, NY}
+        {Post-Baccalaureate Studies in Astronomy and Astrophysics}
+        {Sept 2021 - Aug 2023}
+        \resumeItemListStart
+
+            \resumeItem{Coursework: Electricity and Magnetism (Undergraduate),
+            Research Seminar I/II (Graduate),
+            Astrostatistics (Graduate)}
+
+        \resumeItemListEnd
+            
+    \resumeSubheading
+      {Drexel University}{Philadelphia, PA}
+      {B.S. in Physics, Concentration in Astrophysics | Minor in Sociology}{Sept 2016 -- June 2021}
+       \resumeItemListStart
+      
+         \resumeItem{Senior Thesis: "Unmixing a Document: Resonance and Language Generation" advised by Dr. Jake Ryland Williams}
+         \resumeItem{Relevant Coursework: Observational Astrophysics, Galactic Astrophysics, Cosmology, Computational Physics I and II, Big Data Physics, Statistical Mechanics, Thermodynamics, Calculus I and II, Multivariate Calculus, Complex and Vector Analysis, Differential Equations}
+
+       \resumeItemListEnd
+    \resumeSubheading{Bronx High School of Science}{Bronx, NY}{High School Diploma with Advanced Designation}{Sept 2012 -- June 2016}
+      
+  \resumeSubHeadingListEnd
+
+\section{Honors and Awards}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Cornell Dean's Excellence Fellowship} \hfill \textit{Mar 2023}\\
+    \textbf{National Science Foundation Graduate Research Fellowship}\hfill \textit{Mar 2023}\\
+    \textbf{AAS 241st Meeting FAMOUS Travel Grant} \hfill \textit{Nov 2022}\\
+    \textbf{AAS Commitee on the Status of Minorities Micro-Grant} \hfill \textit{Nov 2022}\\
+    \textbf{Dean's List} \hfill \textit{Fall 2020, Winter -- Spring 2021}\\
+    \textbf{A.J. Drexel Scholarship} \hfill \textit{Fall 2016 -- 2020}\\
+    \textbf{STAR Scholar} \hfill \textit{Summer 2017}\\
+    \textbf{3rd Place Presentation in Physical Sciences, Greater Philadelphia AMP Conference} \hfill \textit{Oct 2017}\\
+    \textbf{New York City Council Certificate of Recognition} \hfill \textit{Aug 2016}\\
+    }
+    }
+\end{itemize}
+    %-----------PROJECTS-----------
+% \section{Coding Projects}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\href{https://github.com/hkrsmk/beepboop-shopee-code-league-2020}{\myuline{\textbf{Shopee Code League}}} $|$ \textit{Python, Jupyter Notebooks, Google Cloud Platform}}{June -- Aug 2020}
+%           \resumeItemListStart
+%             \resumeItem{Set up data pipeline: Kaggle > cloud storage > Google Colab Notebooks\\for faster analysis}
+%             \resumeItem{Set up github repository for team}
+%           \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+
+%-----------RESEARCH-----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+      {Astronomy Research Fellow}{Ithaca, NY}
+      {Carl Sagan Institute}{Sept 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Expand known stars that may see Earth transit the Sun within the past and future 5000 years using Gaia satellite data, advised by Dr. Lisa Kaltenegger at the Carl Sagan Institure and Dr. Jackie Faherty at the American Museum of Natural History}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Astrophysics Research Assistant}{New York, NY}
+      {Columbia Astrophysics Labs}{Sept 2021 -- Aug 2023}
+      \resumeItemListStart
+        \resumeItem{Led exoplanetary science research project, advised by Dr. David Kipping
+        in Cool Worlds Lab in Columbia Dept of Astronomy}
+        \resumeItem{Led and trained team of 3 undergraduates, assisted by graduate student Daniel Yahalomi, in labeling light curve data needed to estimate eccentricity}
+        \resumeItem{Estimated eccentricity for approx. 1000 exoplanets orbiting late M stars using TESS transit data, without the need for radial velocity data, using Bayesian statistics}
+        \resumeItem{Produced catalog of eccentricity data to be made available to the general public, computed using NASA Pleiades supercomputer}
+      \resumeItemListEnd
+  
+    \resumeSubheading
+      {Applied Physics Research Assistant}{Philadelphia, PA}
+      {Drexel University College of Computing and Informatics}{Sept 2020 -- June 2021}
+      \resumeItemListStart
+        \resumeItem{Culminated in senior physics thesis "Unmixing a Document - Resonance and Language Generation", advised by Dr. Jake Ryland Williams}
+        \resumeItem{Stochastic language modeling with aim of demonstrating key physical mechanisms behind human-generated written language}
+        \resumeItem{Verified proposed mechanisms by analyzing data obtained by counting up words in Project Gutenberg corpus, as well as examining applications in quantitative social sciences and machine learning}
+        % \resumeItem{Gave multiple presentations to research group and to Physics Department}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Data Analyst}{Philadelphia, PA}
+      {Drexel University College of Computing and Informatics}{Aug 2020 -- Aug 2021}
+      \resumeItemListStart
+        \resumeItem{NSF REU Supplement Award Number 1850014, supervised by Dr. Jake Ryland Williams}
+        \resumeItem{Studied online human discourse with aim of providing moderation tool against ad hominem attacks in social media}
+        \resumeItem{Stochastic language modeling combined with software development}
+        \resumeItem{Annotated and processed about 500 social media threads for preparation in machine learning tasks}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Applied Physics Research Assistant}{Philadelphia, PA}
+      {Drexel University College of Computing and Informatics}{April 2020 -- Sept 2020}
+      \resumeItemListStart
+        \resumeItem{Remote co-op funded by Drexel's Alliance for Minority Participation program, supervised by Dr. Jake Ryland Williams}
+        \resumeItem{Studied and supported collaborative projects on stochastic language modeling}
+        \resumeItem{Developed visualizations of probabilistic models and data clusters based on Project Gutenberg corpus composed of ~1000 documents after running numerical experiments on cluster computer}
+        \resumeItem{Resulted in preprint paper posted on arXiv}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Astrophysics Research Assistant}{Philadelphia, PA}
+      {Drexel University Department of Physics}{June 2017 -- Sept 2017}
+      \resumeItemListStart
+        \resumeItem{Part of STAR (Scholars Tackling Advanced Research) summer undergraduate program at Drexel}
+        \resumeItem{Produced mock observations of simulated star formation under supervision of Dr. Stephen McMillan}
+        \resumeItem{Streamlined the process of graphical simulation image production initially developed by graduate student Joshua Wall}
+        \resumeItem{Presented at the Oct 2017 Greater Philadelphia AMP Conference and won 3rd Place in Physical Sciences}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Astrophysics Research Assistant}{New York, NY}
+      {American Museum of Natural History}{Sept 2015 -- June 2016}
+      \resumeItemListStart
+        \resumeItem{Part of Science Research Mentoring Program}
+        \resumeItem{Studied dynamics of chaotic binary star system interactions under supervision of museum astrophysicist Dr. Nathan Leigh}
+        \resumeItem{Developed plots of system orbits and virial ratios using Supermongo}
+        \resumeItem{Published a paper in the \textit{Monthly Notices of the Royal Astronomical Society}}
+      \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+% -----------Multiple Positions Heading-----------
+    \resumeSubSubheading
+     {Software Engineer I}{Oct 2014 - Sep 2016}
+    \resumeItemListStart
+        \resumeItem{Apache Beam}
+          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+     \resumeItemListEnd
+    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \fi
+
+    % \resumeSubheading
+    %   {ESG Data Analyst}{May -- Aug 2018}
+    %   {Schneider Electric}{Singapore}
+    %   \resumeItemListStart
+    %     \resumeItem{Optimised usage of in-house energy monitoring software and reaped energy savings of \$1,545 per month}
+    %     \resumeItem{Created 12 other mini-deliverables; 10 were self-initiated. These include databases, guides, and reports, along with internal learning materials for EcoStruxure, Schneider Electric’s main product offer}
+    %     \resumeItem{Founded the Singapore branch’s Green Committee}
+    %     \resumeItem{Organised Global Environment Day activities for the staff}
+    %   \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+    \resumeSubheading
+      {Consultant}{Feb 2017}
+      {National Environment Agency}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Reviewed 4 candidate topics for R\&D funding: found current research grants and current environment technology}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Innovation Consultant}{Dec 2016}
+      {Land Transport Authority}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Proposed folding seat solution increases train capacity by 13}
+        \resumeItem{Achieved best presentation award (out of 9 pairs of people)}
+      \resumeItemListEnd
+\fi
+
+  \resumeSubHeadingListEnd
+
+\section{Teaching Experience}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+    {Special Events and Exhibition Hall Educator}{Philadelphia, PA}
+    {Academy of Natural Sciences}{Oct 2019 -- Mar 2020}
+    \resumeItemListStart
+        \resumeItem{Educated visitors on issues and discoveries in the natural sciences using the seasonally rotating special exhibition as a launchpad}
+        \resumeItem{Communicated science concepts such as evolution and the prevalence of living dinosaurs today to museum patrons of all ages at special events using live demonstrations}
+        \resumeItem{Created several public outreach activities such as biodiversity-demonstrating scavenger hunts and collaborated with museum staff to manage events}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+    {Student STEM Middle School Teaching Assistant} {Philadelphia, PA} {Drexel University} {Jan 2019 -- Mar 2019}
+    \resumeItemListStart
+        \resumeItem{Part of DragonsTeach Step One course offered at Drexel}
+        \resumeItem{Created and taught several lessons pertaining to math topics such as geometry and probability at Masterman School}
+        \resumeItem{Collaborated with fellow teaching student on teaching and managing classroom activities during lessons using research-based education techniques}
+    \resumeItemListEnd{}
+    
+    \resumeSubheading
+    {Student Elementary School Science Club Teaching Assistant}{Philadelphia, PA}{Drexel University} {Jan 2018 -- Mar 2018}
+    \resumeItemListStart
+        \resumeItem{Part of Connections in Physics course offered at Drexel}
+        \resumeItem{Collaborated with fellow physics students to manage and run an after-school science club at Alaine Locke School}
+        \resumeItem{Created enrichment lessons that focused on physics topics appropriate for an elementary school audience}
+    \resumeItemListEnd{}
+    
+    \resumeSubHeadingListEnd
+
+\section{Publications}
+      {\href{https://arxiv.org/abs/1608.07286}{\textbf{The chaotic four‐body problem in Newtonian gravity I: Identical point
+particles.}}}
+      \textit{—Leigh, N.W.C., Stone, N.C., Geller, A.M., Shara, M.M., Thomas, Y.,
+Solano‐Oropeza, D., Muddu, H. (2016)} The Monthly Notices of The Royal
+Astronomical Society. doi: 101093/mnras/stw2178.
+
+\section{Manuscripts In Review}
+
+    \textbf{M-Dwarf Exoplanets With Similar Sizes and Instellations to Earth Typically Follow Near-Circular Orbits.} \textit{—Kipping, D., Solano-Oropeza, D., Yahalomi, D., Poddar, A., Li, M., Zhang, A. (2023)} Submitted to Nature.
+
+\section{Posters}
+
+    \textbf{Probing the Eccentricities  f Long-Period Planetary Candidates Orbiting Low-Mass Stars Observed by TESS} \textit{—Solano-Oropeza, D., Kipping, D., Yahalomi, D., Poddar, A., Li, M., Zhang, A. (2023)} Columbia University Pathways Program Symposium 2023.
+    \vspace{1.5mm}
+    
+    {\href{https://aas241-aas.ipostersessions.com/default.aspx?s=69-03-D2-AA-C9-A5-80-09-09-82-5E-BB-68-E9-8B-24&guestview=true}{\textbf{TESS, M-Dwarfs, and the Photoeccentric Effect: A Loophole in Transit}}} \textit{—Solano-Oropeza, D., Kipping, D., Yahalomi, D., Poddar, A., Li, M., Zhang, A. (2023)}  AAS 241st Annual Meeting of the American Astronomical Society.
+    \vspace{1.5mm}
+    
+    {\href{https://nexsci.caltech.edu/workshop/2022/posters/finalmaybe_sagan22_eccentricity_poster.pdf}{\textbf{Estimating Eccentricity for M-Dwarfs without Radial Velocity}}} \textit{—Solano-Oropeza, D., Kipping, D., Yahalomi, D., Poddar, A., Li, M., Zhang, A. (2022)} 2022 Sagan Exoplanet Summer Hybrid Workshop: Exoplanet Science in the Gaia Era.
+    \vspace{1.5mm}
+    
+    \textbf{Mapping the Eccentricity of Pale Red Dots} \textit{—Solano-Oropeza, D., Kipping, D. (2021)} Simons Foundation Center for Computational Astrophysics GothamFest 2021.
+    \vspace{1.5mm}
+    
+    \textbf{The Mixing Law and Experiments in Document Malformation} \textit{—Williams, J.R., Solano-Oropeza, D. (2021)} Fourth Northeast Regional Conference on Complex Systems.
+    \vspace{1.5mm}
+    
+    \textbf{Mock Observations of Simulated Star Formation} \textit{—Solano-Oropeza, D., Wall, J., McMillan, S. (2017)} STAR Summer Showcase 2017.
+    \vspace{1.5mm}
+    
+    \textbf{Capturing Chaos: On the Chaotic 4-Body Problem in Newtonian Gravity} \textit{—Muddu, H., Solano-Oropeza, D., Thomas, Y., Leigh, N. (2016)} 2016 NYC Science Student Research Colloquium.
+    
+\section{Presentations}
+    
+    \textbf{Speedrunning, Childhood Trauma, and Planetary Transits} \textit{—Solano-Oropeza, D. (2022)} The Science of Everyday Life, A Comedy/Storytelling Workshop at the American Museum of Natural History.
+    \vspace{1.5mm}
+
+    \textbf{Eccentric Exo-Neighbors Orbiting Late M Stars} \textit{—Solano-Oropeza, D. (2022)} Columbia University Astrofest 2022.
+    \vspace{1.5mm}
+    
+    \textbf{Estimating Eccentricities for M-Dwarfs without Radial Velocity POP} \textit{—Solano-Oropeza, D. (2022)} 2022 Sagan Exoplanet Summer Hybrid Workshop: Exoplanet Science in the Gaia Era.
+    \vspace{1.5mm}
+
+    \textbf{Mapping the Eccentricities of Pale Red Dots} \textit{—Solano-Oropeza, D. (2022)} 2022 Annual Bridge to the PhD. in STEM Research Symposium.
+    \vspace{1.5mm}
+    
+    \textbf{The Mixing Law} \textit{—Williams, J.R., Solano-Oropeza, D. (2021)} Fourth Northeast Regional Conference on Complex Systems.
+    \vspace{1.5mm}
+    
+    \textbf{Capturing Chaos in Gravitational Interactions} \textit{—Solano-Oropeza, D., Thomas, Y., Muddu, H., Leigh, N. (2016)} 2016 NYC Science Student Research Colloquium.
+    
+\section{Preprints}
+    {\href{https://arxiv.org/abs/2008.02885}{\textbf{A general solution to the preferential model}}} \textit{—Williams, J.R., Solano-Oropeza, D., Hunsberger, J.R. (2020)} arXiv:2008.02885
+
+% \section{Upcoming Posters}
+    
+
+\section{Media Communications}
+    Quoted in {\href{https://www.columbiaspectator.com/news/2022/02/02/astronomy-professor-david-kipping-part-of-breakthrough-exomoon-discovery/}{\textbf{Astronomy professor David Kipping part of breakthrough exomoon discovery}}} \textit{—Pagkas, S., Rossi, E. (2 Feb 2022)} The Columbia Daily Spectator.
+
+%-----------CCAs-----------
+\section{Work Experience}
+    \resumeSubHeadingListStart
+    
+    \resumeSubheading
+    {Student Network Technician}{Philadelphia, PA}
+     {Drexel University Information Technology} {Apr 2019 -- Sept 2019}
+    \resumeItemListStart
+        \resumeItem{Supported network and telecommunications technicians at Drexel}
+        \resumeItem{Surveyed wireless access points and analyzed them for efficiency}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+    {Desktop Assistant} {Philadelphia, PA}
+    {Drexel University Information Technology} {Apr 2018 -- Dec 2018}
+    \resumeItemListStart
+        \resumeItem{Resolved frontline technical issues in‐person or through phone/email/remote access}
+        \resumeItem{Communicated patiently and effectively with dozens of clients and other IT staff daily to ensure efficient problem‐solving}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+    {Cinema and TV Equipment Assistant} {Philadelphia, PA}{Westphal College of Media Arts and Design} {Sept 2016 -- June 2017}
+    \resumeItemListStart
+        \resumeItem{Maintained film equipment inventory for lending out to about 100 students and faculty}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+    {Archivist Intern} {Flushing, NY} {Bowne House Historical Society}{Jun 2016 -- Sept 2016}
+    \resumeItemListStart
+        \resumeItem{Scanned and sorted about 30 historical documents daily for museum archives}
+        \resumeItem{Awarded New York City Council Certificate of Recognition for improving historical archives}
+    \resumeItemListEnd
+    
+    \resumeSubHeadingListEnd
+
+\section{Leadership}
+    \resumeSubHeadingListStart
+    
+      \resumeSubheading
+      {President}{Philadelphia, PA}
+      {Drexel Socialists}{Apr 2019 -- June 2021}
+      \resumeItemListStart
+        \resumeItem{Helped organize several diversity-supporting initiatives across the school such as a campaign for sanctuary campus, an anti-racist coalition, among others}
+      \resumeItemListEnd
+      
+    \resumeSubHeadingListEnd
+
+\section{Membership}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \small{\item{
+        \textbf{American Astronomical Society} \hfill \textit{May 2022 -- Present}\\
+        \textbf{Society for the Advancement of Chicanos and Native Americans in Science} \hfill \textit{May 2022 -- Present}\\
+        \textbf{Fossil Free Drexel} \hfill \textit{Jan 2018 -- June 2021}\\
+        \textbf{Latinos for a United Campus} \hfill \textit{Sept 2017 -- June 2021}\\
+        \textbf{Queer Students of Color} \hfill \textit{Sept 2017 -- June 2021}\\
+        \textbf{Queer Student Union} \hfill \textit{Sept 2016 -- June 2021}\\
+        \textbf{Women and Minorities in Physics Society} \hfill \textit{Sept 2016 -- June 2021}\\
+        \textbf{Society of Physics Students} \hfill \textit{Sept 2016 -- June 2021}\\
+        
+        }
+        }
+    \end{itemize}
+          
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C++, Mathematica, ADQL, SQL} \\
+     \vspace{1mm}
+     \textbf{Human Languages}{: Spanish (Fluent), Mixteco (Beginner), Classical Nahuatl (Beginner), Navajo (Beginner)} \\
+     \vspace{1mm}
+     \textbf{Tools}{: Jupyter Notebooks, Git, Supermongo, LaTex, Microsoft Word/Powerpoint/Excel, Photoshop, Active Directory, Windows, Mac, Linux/Ubuntu, NASA Pleiades, emacs, bash, zsh} \\
+     \vspace{1mm}
+     \textbf{Libraries}{: pandas, matplotlib, numpy, spaCy, astropy, yt, FLASH, RADMC, exoplanet, orvara, lightkurve}
+     }
+     }
+ \end{itemize}
+
+
+%
+\iffalse
+% \iftrue
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C++} \\
+     \textbf{Frameworks}{: WordPress} \\
+     \textbf{Developer Tools}{: Jupyter Notebooks, Git} \\
+     \textbf{Libraries}{: pandas, matplotlib}
+    }}
+ \end{itemize}
+\fi
+
+%-------------------------------------------
+\end{document}
